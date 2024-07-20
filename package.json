@@ -1,6 +1,6 @@
 {
   "name": "@netizen-teknologi/react-native-notification",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "React Native Notification is a ready-to-use package without any configuration. It is very useful notification in-app for React Native. Send user local notifications, handling errors during requests, or notifying users about something. This package was wrapped using react-native-notifier and was writted using typescript.",
   "main": "index.tsx",
   "scripts": {
