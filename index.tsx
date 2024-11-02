@@ -9,6 +9,7 @@ interface showNotifProps {
     title: string;
     description: string;
     logo?: any,
+    duration: number
 }
 
 interface showAlertProps {
@@ -18,6 +19,7 @@ interface showAlertProps {
     description: string;
     alertType: string;
     logo?: any,
+    duration: number
 }
 
 export default function useNotificationApp() {
@@ -35,7 +37,8 @@ export default function useNotificationApp() {
         onHidden,
         title,
         description,
-        logo
+        logo,
+        duration,
     }: showNotifProps) => {
 
         let logoNotif = require('./assets/image/logo-remove-bg.png');
@@ -46,7 +49,7 @@ export default function useNotificationApp() {
         Notifier.showNotification({
             title: title,
             description: description,
-            duration: 3 * 1000,
+            duration: duration? duration : 3 * 1000,
             showAnimationDuration: 800,
             showEasing: Easing.bounce,
             onPress: onPress ? onPress : handleOnPress,
@@ -67,12 +70,13 @@ export default function useNotificationApp() {
         onHidden,
         title,
         description,
-        alertType
+        alertType,
+        duration
     }: showAlertProps) => {
         Notifier.showNotification({
             title: title,
             description: description,
-            duration: 0,
+            duration: duration? duration : 3 * 1000,
             showAnimationDuration: 800,
             showEasing: Easing.bounce,
             onPress: onPress ? onPress : handleOnPress,
